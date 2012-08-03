@@ -4,7 +4,7 @@ This is a polyfill for implementing the HTML5 `<input type="month">` element in 
 
 ## Usage
 
-Using it is easy — simply include the `month-polyfill.js` file in the HEAD of the HTML page.  
+Using it is easy — simply include the `month-polyfill.min.js` file in the HEAD of the HTML page.  
 You can then use `<input type="month">` elements normally.
 
 If the script detects that the browser doesn't support `<input type="month">`, it will search for these elements and replace them with a jQuery UI datepicker to select the month. The month selection is stored in a hidden form field and submitted with the form in the standard format.
