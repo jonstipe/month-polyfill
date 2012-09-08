@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <title>HTML5 Month polyfill</title>
+    <meta name="author" content="Jonathan Stipe" />
+    <meta name="copyright" content="&copy; 2012 Jonathan Stipe" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery.ui.all.css" />
+    <link rel="stylesheet" href="month-polyfill.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://www.modernizr.com/downloads/modernizr-latest.js"></script>
+    <script type="text/javascript" src="month-polyfill.js"></script>
+    <script type="text/javascript">
+//<![CDATA[
+$(function() {
+  var dtElem = document.createElement("dt"),
+      ddElem = document.createElement("dd"),
+      inputElem = document.createElement("input");
+    dtElem.appendChild(document.createTextNode("Dynamically generated element"));
+    $(inputElem).attr({
+      type: 'month',
+      name: 'generatedElement',
+      value: '2000-07',
+      min: '2000-01',
+      max: '2000-12'
+    });
+    ddElem.appendChild(inputElem);
+    $('dl').first().append(dtElem).append(ddElem);
+    $(inputElem).inputMonth();
+});
+//]]>
+    </script>
+  </head>
+  <body>
+<form id="form-demo"> 
+<dl>
+<dt>month (with value, min, and max)</dt>
+<dd><input type="month" name="myMonth0" value="2000-01" min="1999-01" max="2000-12" /></dd>
+
+<dt>month (with value and max)</dt>
+<dd><input type="month" name="myMonth1" value="2000-01" max="2000-12" /></dd>
+
+<dt>month (with value and min)</dt>
+<dd><input type="month" name="myMonth2" value="2000-01" min="1999-01" /></dd>
+
+<dt>month (with value and step)</dt>
+<dd><input type="month" name="myMonth3" value="2000-01" step="3" /></dd>
+
+<dt>month (with value, min, max, and step)</dt>
+<dd><input type="month" name="myMonth4" value="2000-01" min="1999-01" max="2000-12" step="2" /></dd>
+
+<dt>month (with min and max)</dt>
+<dd><input type="month" name="myMonth5" min="1999-01" max="2000-12" /></dd>
+
+<dt>month (with just min)</dt>
+<dd><input type="month" name="myMonth6" min="1999-01" /></dd>
+
+<dt>month (with just max)</dt>
+<dd><input type="month" name="myMonth7" max="2000-12" /></dd>
+
+<dt>month (with just step)</dt>
+<dd><input type="month" name="myMonth8" step="3" /></dd>
+
+<dt>month (with min, max, and step)</dt>
+<dd><input type="month" name="myMonth9" min="1999-01" max="2000-12" step="3" /></dd>
+
+<dt>month (with min and step)</dt>
+<dd><input type="month" name="myMonth10" min="1999-01" step="4" /></dd>
+
+<dt>month (with max and step)</dt>
+<dd><input type="month" name="myMonth11" max="2000-12" step="4" /></dd>
+
+<dt>month (with value, min, max, and step=any)</dt>
+<dd><input type="month" name="myMonth12" value="2000-07" min="2000-01" max="2000-12" step="any" /></dd>
+
+<dt>month (with value, max, and step=any)</dt>
+<dd><input type="month" name="myMonth13" value="2000-07" max="2000-12" step="any" /></dd>
+
+<dt>month (with value, min, and step=any)</dt>
+<dd><input type="month" name="myMonth14" value="2000-07" min="2000-01" step="any" /></dd>
+
+<dt>month (with max and step=any)</dt>
+<dd><input type="month" name="myMonth15" max="2000-12" step="any" /></dd>
+
+<dt>month (with min and step=any)</dt>
+<dd><input type="month" name="myMonth16" min="2000-01" step="any" /></dd>
+
+<dt>month (with step=any)</dt>
+<dd><input type="month" name="myMonth17" step="any" /></dd>
+
+<dt>month (without anything)</dt>
+<dd><input type="month" name="myMonth18" /></dd>
+</dl>
+<input type="submit" />
+</form>
+
+<a href="https://github.com/jonstipe/month-polyfill">Back to GitHub repo</a>
+</body>
+</html>
